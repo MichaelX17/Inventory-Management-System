@@ -1,0 +1,22 @@
+import type { Metadata } from "next";
+import DashboardNavbar from "@/components/dashboard/DashboardNavbar";
+
+export const metadata: Metadata = {
+  title: "Dashboard - Luce Dorata",
+  description: "Panel de administración del inventario",
+};
+
+export default function DashboardLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-[#fff0f3] to-[#fff5f6]">
+      <DashboardNavbar />
+      <main className="pt-6 pb-12">
+        {children}
+      </main>
+    </div>
+  );
+}
