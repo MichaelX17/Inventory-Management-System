@@ -1,5 +1,4 @@
 // components/dashboard/DashboardNavbar.tsx
-// REMOVER "use client" - Lo haremos más simple
 import { Gem, LogOut } from "lucide-react";
 
 export default function DashboardNavbar() {
@@ -17,14 +16,14 @@ export default function DashboardNavbar() {
 
         <div className="flex items-center gap-4">
           <span className="text-gray-600 hidden md:inline text-sm">
-            Hola, <b className="text-indigo-600">Administrador</b>
+            Hello, <b className="text-indigo-600">Admin</b>
           </span>
           <a
             href="/"
             className="flex items-center gap-2 text-gray-600 hover:text-indigo-600 border border-gray-300 hover:border-indigo-400 rounded-full px-4 py-2 text-sm transition-all duration-200 hover:shadow-sm"
           >
             <LogOut className="h-4 w-4" />
-            <span className="hidden sm:inline">Salir</span>
+            <span className="hidden sm:inline">Logout</span>
           </a>
         </div>
       </div>

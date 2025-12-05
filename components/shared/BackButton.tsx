@@ -12,7 +12,7 @@ export default function BackButton({ href }: BackButtonProps) {
       className="flex items-center text-gray-600 hover:text-indigo-600 font-medium transition-colors group"
     >
       <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-      Volver
+      Back
     </Link>
   );
 }

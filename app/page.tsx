@@ -13,22 +13,22 @@ export default function LoginPage() {
           </div>
 
           <h1 className="text-2xl font-bold text-center text-white mb-2">
-            Bienvenido
+            Welcome
           </h1>
           <p className="text-gray-200 text-center text-sm mb-8">
-            Sistema de Gestión de Bisutería
+            Jewelry Management System
           </p>
 
-          {/* FORM con acción al dashboard */}
+          {/* FORM with action to dashboard */}
           <form action="/dashboard">
             <div className="mb-6">
               <div className="flex items-center bg-gray-50 rounded-full px-4 py-4">
                 <i className="fa-solid fa-user text-gray-400 mr-3"></i>
                 <input
                   type="text"
-                  name="usuario"
+                  name="username"
                   className="w-full bg-transparent outline-none"
-                  placeholder="Nombre de usuario"
+                  placeholder="Username"
                   required
                 />
               </div>
@@ -39,9 +39,9 @@ export default function LoginPage() {
                 <i className="fa-solid fa-lock text-gray-400 mr-3"></i>
                 <input
                   type="password"
-                  name="clave"
+                  name="password"
                   className="w-full bg-transparent outline-none"
-                  placeholder="Contraseña"
+                  placeholder="Password"
                   required
                 />
               </div>
@@ -51,7 +51,7 @@ export default function LoginPage() {
               type="submit"
               className="w-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold py-4 rounded-full mb-6 hover:shadow-lg hover:shadow-indigo-500/30 transition-all"
             >
-              INGRESAR
+              LOG IN
             </button>
 
             <div className="text-center text-white/70 text-xs">

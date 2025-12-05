@@ -3,7 +3,7 @@ import BackButton from "@/components/shared/BackButton";
 export default function MovementsPage() {
   return (
     <div className="min-h-screen pb-12">
-      {/* Header con logo pequeño */}
+      {/* Header with small logo */}
       <div className="pt-6 pb-4">
         <div className="container mx-auto px-4">
           <div className="flex justify-center">
@@ -15,24 +15,24 @@ export default function MovementsPage() {
       </div>
 
       <div className="container mx-auto px-4">
-        {/* Botón de volver */}
+        {/* Back button */}
         <div className="mb-6">
           <BackButton href="/dashboard" />
         </div>
 
-        {/* Contenedor principal */}
+        {/* Main container */}
         <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 max-w-4xl mx-auto border border-gray-100">
           <h1 className="text-3xl font-playfair font-bold text-gray-800 text-center mb-2">
-            Actualizar Stock
+            Update Stock
           </h1>
           <p className="text-gray-500 text-center mb-8">
-            Registra entradas de proveedores o salidas por venta.
+            Record supplier entries or sales outputs.
           </p>
 
-          {/* Formulario de movimientos */}
+          {/* Movements form */}
           <MovementForm />
 
-          {/* Tabla de últimos movimientos */}
+          {/* Recent movements table */}
           <MovementHistory />
         </div>
       </div>
@@ -40,48 +40,48 @@ export default function MovementsPage() {
   );
 }
 
-// Componente del formulario de movimientos
+// Movements form component
 function MovementForm() {
-  // Datos de ejemplo para productos
+  // Sample data for products
   const mockProducts = [
-    { id: 1, name: "Collar de Perlas Elegante", code: "JD001" },
-    { id: 2, name: "Anillo de Plata con Zafiro", code: "JD002" },
-    { id: 3, name: "Pendientes de Diamante", code: "JD003" },
-    { id: 4, name: "Pulsera de Oro 18k", code: "JD004" },
-    { id: 5, name: "Tobillera de Plata", code: "JD005" },
+    { id: 1, name: "Elegant Pearl Necklace", code: "JD001" },
+    { id: 2, name: "Silver Ring with Sapphire", code: "JD002" },
+    { id: 3, name: "Diamond Earrings", code: "JD003" },
+    { id: 4, name: "18k Gold Bracelet", code: "JD004" },
+    { id: 5, name: "Silver Anklet", code: "JD005" },
   ];
 
-  // Mensaje de éxito (oculto por defecto)
+  // Success message (hidden by default)
   const showSuccessMessage = false;
 
   return (
     <>
-      {/* Mensaje de éxito (condicional) */}
+      {/* Success message (conditional) */}
       {showSuccessMessage && (
         <div className="bg-green-50 border border-green-200 text-green-800 rounded-xl p-4 mb-6">
           <div className="flex items-center">
             <i className="fa-solid fa-check-circle mr-3 text-green-600"></i>
             <div>
-              <p>Éxito: Se agregaron 5 unidades.</p>
-              <p className="font-semibold mt-1">Nuevo Saldo en Sistema: 20</p>
+              <p>Success: 5 units were added.</p>
+              <p className="font-semibold mt-1">New System Balance: 20</p>
             </div>
           </div>
         </div>
       )}
 
-      {/* Formulario */}
+      {/* Form */}
       <form>
-        {/* Selección de producto */}
+        {/* Product selection */}
         <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Seleccionar Joya
+            Select Jewel
           </label>
           <select
             name="product_id"
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 outline-none transition-all bg-gray-50 focus:bg-white"
             required
           >
-            <option value="">-- Buscar en la lista --</option>
+            <option value="">-- Search in list --</option>
             {mockProducts.map((product) => (
               <option key={product.id} value={product.id}>
                 {product.name} (Ref: {product.code})
@@ -91,112 +91,112 @@ function MovementForm() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          {/* Tipo de movimiento */}
+          {/* Movement type */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Tipo de Movimiento
+              Movement Type
             </label>
             <select
               name="movement_type"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 outline-none transition-all bg-gray-50 focus:bg-white"
             >
-              <option value="entrada">📥 Entrada (Compra)</option>
-              <option value="salida">📤 Salida (Venta)</option>
+              <option value="entry">📥 Entry (Purchase)</option>
+              <option value="sale">📤 Exit (Sale)</option>
             </select>
           </div>
 
-          {/* Cantidad */}
+          {/* Quantity */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Cantidad
+              Quantity
             </label>
             <input
               type="number"
               name="quantity"
               min="1"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 outline-none transition-all bg-gray-50 focus:bg-white"
-              placeholder="Ej: 5"
+              placeholder="Ex: 5"
               required
             />
           </div>
         </div>
 
-        {/* Observación */}
+        {/* Observation */}
         <div className="mb-8">
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Observación / Motivo
+            Observation / Reason
           </label>
           <input
             type="text"
             name="observation"
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 outline-none transition-all bg-gray-50 focus:bg-white"
-            placeholder="Ej: Factura #1024 o Venta cliente X"
+            placeholder="Ex: Invoice #1024 or Sale to customer X"
             required
           />
         </div>
 
-        {/* Botón de envío */}
+        {/* Submit button */}
         <button
           type="submit"
           className="w-full bg-gray-800 hover:bg-indigo-600 text-white font-semibold py-4 px-6 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/30"
         >
-          Registrar Movimiento
+          Record Movement
         </button>
       </form>
     </>
   );
 }
 
-// Componente de historial de movimientos
+// Movement history component
 function MovementHistory() {
-  // Datos de ejemplo para movimientos
+  // Sample data for movements
   const mockMovements = [
     {
       id: 1,
-      productName: "Collar de Perlas Elegante",
-      type: "entrada",
+      productName: "Elegant Pearl Necklace",
+      type: "entry",
       quantity: 10,
       date: "2024-01-15 14:30",
-      observation: "Compra proveedor"
+      observation: "Supplier purchase"
     },
     {
       id: 2,
-      productName: "Anillo de Plata con Zafiro",
-      type: "salida",
+      productName: "Silver Ring with Sapphire",
+      type: "sale",
       quantity: 2,
       date: "2024-01-15 11:15",
-      observation: "Venta cliente María"
+      observation: "Sale to customer Maria"
     },
     {
       id: 3,
-      productName: "Pendientes de Diamante",
-      type: "entrada",
+      productName: "Diamond Earrings",
+      type: "entry",
       quantity: 5,
       date: "2024-01-14 16:45",
-      observation: "Reposición stock"
+      observation: "Stock replenishment"
     },
     {
       id: 4,
-      productName: "Pulsera de Oro 18k",
-      type: "salida",
+      productName: "18k Gold Bracelet",
+      type: "sale",
       quantity: 1,
       date: "2024-01-14 10:20",
-      observation: "Venta cliente Juan"
+      observation: "Sale to customer Juan"
     },
     {
       id: 5,
-      productName: "Tobillera de Plata",
-      type: "entrada",
+      productName: "Silver Anklet",
+      type: "entry",
       quantity: 8,
       date: "2024-01-13 09:10",
-      observation: "Compra mayorista"
+      observation: "Wholesale purchase"
     },
   ];
 
   return (
     <div className="mt-10 pt-8 border-t border-gray-200">
       <h2 className="text-xl font-semibold text-gray-800 text-center mb-6">
-        Últimos Movimientos Registrados
+        Recent Movements Recorded
       </h2>
 
       <div className="overflow-x-auto rounded-lg border border-gray-200">
@@ -204,16 +204,16 @@ function MovementHistory() {
           <thead className="bg-gray-50">
             <tr>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Joya
+                Jewel
               </th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Tipo
+                Type
               </th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Cant.
+                Qty.
               </th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Fecha
+                Date
               </th>
             </tr>
           </thead>
@@ -232,12 +232,12 @@ function MovementHistory() {
                   <td className="px-4 py-3 whitespace-nowrap">
                     <span
                       className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                        movement.type === "entrada"
+                        movement.type === "entry"
                           ? "bg-green-100 text-green-800 border border-green-200"
                           : "bg-red-100 text-red-800 border-red-200"
                       }`}
                     >
-                      {movement.type === "entrada" ? "📥 Entrada" : "📤 Salida"}
+                      {movement.type === "entry" ? "📥 Entry" : "📤 Exit"}
                     </span>
                   </td>
                   <td className="px-4 py-3 whitespace-nowrap">
@@ -253,7 +253,7 @@ function MovementHistory() {
             ) : (
               <tr>
                 <td colSpan={4} className="px-4 py-8 text-center text-gray-500">
-                  Sin movimientos recientes.
+                  No recent movements.
                 </td>
               </tr>
             )}
@@ -264,7 +264,7 @@ function MovementHistory() {
   );
 }
 
-// Función auxiliar para formatear fechas
+// Helper function to format dates
 function formatDate(dateString: string): string {
   const date = new Date(dateString);
   const day = date.getDate().toString().padStart(2, "0");

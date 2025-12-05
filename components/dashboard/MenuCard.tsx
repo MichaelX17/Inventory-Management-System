@@ -1,5 +1,4 @@
 // components/dashboard/MenuCard.tsx
-// REMOVER "use client" - Este será un Server Component
 import { LucideIcon } from "lucide-react";
 import Link from "next/link";
 

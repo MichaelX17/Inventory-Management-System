@@ -12,8 +12,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Luce Dorata - Gestión de Inventario",
-  description: "Sistema de gestión de inventario para joyería",
+  title: "Luce Dorata - Inventory Management",
+  description: "Inventory management system for jewelry",
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="en">
       <head>
         <link 
           rel="stylesheet" 

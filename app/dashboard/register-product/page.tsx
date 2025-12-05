@@ -3,7 +3,7 @@ import BackButton from "@/components/shared/BackButton";
 export default function RegisterProductPage() {
   return (
     <div className="min-h-screen pb-12">
-      {/* Header con logo pequeño */}
+      {/* Header with small logo */}
       <div className="pt-6 pb-4">
         <div className="container mx-auto px-4">
           <div className="flex justify-center">
@@ -15,18 +15,18 @@ export default function RegisterProductPage() {
       </div>
 
       <div className="container mx-auto px-4">
-        {/* Botón de volver */}
+        {/* Back button */}
         <div className="mb-6">
           <BackButton href="/dashboard" />
         </div>
 
-        {/* Contenedor principal del formulario */}
+        {/* Main form container */}
         <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 max-w-4xl mx-auto border border-gray-100">
           <h1 className="text-3xl font-playfair font-bold text-gray-800 text-center mb-8">
-            Registrar Nueva Pieza
+            Register New Piece
           </h1>
 
-          {/* Formulario */}
+          {/* Form */}
           <ProductForm />
         </div>
       </div>
@@ -34,73 +34,73 @@ export default function RegisterProductPage() {
   );
 }
 
-// Componente del formulario (podríamos moverlo a un archivo separado después)
+// Form component (we could move it to a separate file later)
 function ProductForm() {
-  // Por ahora solo es visual, sin lógica de envío
+  // For now it's just visual, without submission logic
   return (
     <>
-      {/* Mensaje de éxito (oculto por defecto) */}
+      {/* Success message (hidden by default) */}
       <div className="hidden bg-green-50 border border-green-200 text-green-800 rounded-xl p-4 mb-6">
         <div className="flex items-center">
           <i className="fa-solid fa-check-circle mr-3 text-green-600"></i>
-          <span>¡Pieza registrada con éxito!</span>
+          <span>Piece registered successfully!</span>
         </div>
       </div>
 
       <form>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          {/* Código de Referencia */}
+          {/* Reference Code */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Código de Referencia
+              Reference Code
             </label>
             <input
               type="text"
               name="code"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 outline-none transition-all bg-gray-50 focus:bg-white"
-              placeholder="Ej: COL-001"
+              placeholder="Ex: COL-001"
               required
             />
           </div>
 
-          {/* Nombre de la Pieza */}
+          {/* Piece Name */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Nombre de la Pieza
+              Piece Name
             </label>
             <input
               type="text"
               name="name"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 outline-none transition-all bg-gray-50 focus:bg-white"
-              placeholder="Ej: Collar Perlas de Río"
+              placeholder="Ex: River Pearl Necklace"
               required
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-          {/* Categoría */}
+          {/* Category */}
           <div className="md:col-span-2">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Categoría
+              Category
             </label>
             <select
               name="category"
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 outline-none transition-all bg-gray-50 focus:bg-white"
             >
-              <option value="Collar">Collar</option>
-              <option value="Pulsera">Pulsera</option>
-              <option value="Anillo">Anillo</option>
-              <option value="Zarcillos">Zarcillos</option>
-              <option value="Juego Completo">Juego Completo</option>
-              <option value="Otro">Otro</option>
+              <option value="Necklace">Necklace</option>
+              <option value="Bracelet">Bracelet</option>
+              <option value="Ring">Ring</option>
+              <option value="Earrings">Earrings</option>
+              <option value="Full Set">Full Set</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 
-          {/* Precio */}
+          {/* Price */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Precio ($)
+              Price ($)
             </label>
             <input
               type="number"
@@ -112,10 +112,10 @@ function ProductForm() {
             />
           </div>
 
-          {/* Stock Inicial */}
+          {/* Initial Stock */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Stock Inicial
+              Initial Stock
             </label>
             <input
               type="number"
@@ -127,26 +127,26 @@ function ProductForm() {
           </div>
         </div>
 
-        {/* Descripción */}
+        {/* Description */}
         <div className="mb-8">
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Descripción / Detalles
+            Description / Details
           </label>
           <textarea
             name="description"
             rows={3}
             className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-200 outline-none transition-all bg-gray-50 focus:bg-white resize-none"
-            placeholder="Materiales, colores, detalles..."
+            placeholder="Materials, colors, details..."
           />
         </div>
 
-        {/* Botón de envío */}
+        {/* Submit button */}
         <button
           type="submit"
           className="w-full bg-gray-800 hover:bg-indigo-600 text-white font-semibold py-4 px-6 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/30 flex items-center justify-center gap-3"
         >
           <i className="fa-solid fa-save"></i>
-          Guardar en Inventario
+          Save to Inventory
         </button>
       </form>
     </>

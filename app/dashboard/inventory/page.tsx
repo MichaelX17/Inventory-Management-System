@@ -3,13 +3,13 @@ import InventorySummary from "@/components/inventory/InventorySummary";
 import SearchBar from "@/components/inventory/SearchBar";
 import BackButton from "@/components/shared/BackButton";
 
-// Datos de ejemplo - luego serán reemplazados por JSON
+// Sample data - will be replaced by JSON later
 const mockProducts = [
   {
     id: 1,
     code: "JD001",
-    name: "Collar de Perlas Elegante",
-    category: "Collares",
+    name: "Elegant Pearl Necklace",
+    category: "Necklaces",
     price: 89.99,
     stock: 15,
     lowStockThreshold: 5
@@ -17,8 +17,8 @@ const mockProducts = [
   {
     id: 2,
     code: "JD002",
-    name: "Anillo de Plata con Zafiro",
-    category: "Anillos",
+    name: "Silver Ring with Sapphire",
+    category: "Rings",
     price: 125.50,
     stock: 3,
     lowStockThreshold: 5
@@ -26,8 +26,8 @@ const mockProducts = [
   {
     id: 3,
     code: "JD003",
-    name: "Pendientes de Diamante",
-    category: "Pendientes",
+    name: "Diamond Earrings",
+    category: "Earrings",
     price: 199.99,
     stock: 8,
     lowStockThreshold: 5
@@ -35,8 +35,8 @@ const mockProducts = [
   {
     id: 4,
     code: "JD004",
-    name: "Pulsera de Oro 18k",
-    category: "Pulseras",
+    name: "18k Gold Bracelet",
+    category: "Bracelets",
     price: 299.99,
     stock: 12,
     lowStockThreshold: 5
@@ -44,8 +44,8 @@ const mockProducts = [
   {
     id: 5,
     code: "JD005",
-    name: "Tobillera de Plata",
-    category: "Tobilleras",
+    name: "Silver Anklet",
+    category: "Anklets",
     price: 45.75,
     stock: 2,
     lowStockThreshold: 5
@@ -53,8 +53,8 @@ const mockProducts = [
   {
     id: 6,
     code: "JD006",
-    name: "Broche de Mariposa",
-    category: "Broches",
+    name: "Butterfly Brooch",
+    category: "Brooches",
     price: 65.25,
     stock: 20,
     lowStockThreshold: 5
@@ -62,13 +62,13 @@ const mockProducts = [
 ];
 
 export default function InventoryPage() {
-  // Calcular totales
+  // Calculate totals
   const totalPhysicalStock = mockProducts.reduce((sum, product) => sum + product.stock, 0);
   const totalInventoryValue = mockProducts.reduce((sum, product) => sum + (product.price * product.stock), 0);
 
   return (
     <div className="min-h-screen pb-12">
-      {/* Header con logo pequeño */}
+      {/* Header with small logo */}
       <div className="pt-6 pb-4">
         <div className="container mx-auto px-4">
           <div className="flex justify-center">
@@ -80,24 +80,24 @@ export default function InventoryPage() {
       </div>
 
       <div className="container mx-auto px-4">
-        {/* Barra superior con botón de volver y título */}
+        {/* Top bar with back button and title */}
         <div className="flex justify-between items-center mb-8">
           <BackButton href="/dashboard" />
           <h1 className="text-3xl font-playfair font-bold text-gray-800 text-center">
-            Colección de Joyas
+            Jewelry Collection
           </h1>
-          <div className="w-20"></div> {/* Espaciador para centrar el título */}
+          <div className="w-20"></div> {/* Spacer to center the title */}
         </div>
 
-        {/* Contenedor principal */}
+        {/* Main container */}
         <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 border border-gray-100">
-          {/* Buscador */}
+          {/* Search bar */}
           <SearchBar />
 
-          {/* Tabla de productos */}
+          {/* Products table */}
           <InventoryTable products={mockProducts} />
 
-          {/* Resumen de totales */}
+          {/* Totals summary */}
           <InventorySummary 
             totalPhysicalStock={totalPhysicalStock}
             totalInventoryValue={totalInventoryValue}

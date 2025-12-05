@@ -1,25 +1,25 @@
 export default function DashboardPage() {
   const menuItems = [
     {
-      title: "Mis Joyas",
-      description: "Consulta y administra las piezas disponibles.",
+      title: "My Jewelry",
+      description: "Consult and manage available pieces.",
       icon: "fa-gem",
       href: "/dashboard/inventory",
-      buttonText: "Ver Colección"
+      buttonText: "View Collection"
     },
     {
-      title: "Nueva Pieza",
-      description: "Registra una nueva entrada de bisutería.",
+      title: "New Piece",
+      description: "Register a new jewelry entry.",
       icon: "fa-circle-plus",
       href: "/dashboard/register-product",
-      buttonText: "Agregar"
+      buttonText: "Add"
     },
     {
-      title: "Movimientos",
-      description: "Registrar ventas o reposición de stock.",
+      title: "Movements",
+      description: "Record sales or stock replenishment.",
       icon: "fa-rotate",
       href: "/dashboard/movements",
-      buttonText: "Actualizar"
+      buttonText: "Update"
     }
   ];
 
@@ -39,20 +39,20 @@ export default function DashboardPage() {
 
           <div className="flex items-center gap-4">
             <span className="text-gray-600 hidden md:inline text-sm">
-              Hola, <b className="text-indigo-600">Administrador</b>
+              Hello, <b className="text-indigo-600">Administrator</b>
             </span>
             <a
               href="/"
               className="text-gray-600 hover:text-indigo-600 border border-gray-300 rounded-full px-4 py-2 text-sm"
             >
               <i className="fa-solid fa-right-from-bracket mr-2"></i>
-              <span className="hidden sm:inline">Salir</span>
+              <span className="hidden sm:inline">Logout</span>
             </a>
           </div>
         </div>
       </nav>
 
-      {/* Contenido */}
+      {/* Content */}
       <div className="container mx-auto px-4 py-8">
         {/* Logo */}
         <div className="text-center mb-12">
@@ -60,14 +60,14 @@ export default function DashboardPage() {
             <i className="fa-solid fa-gem text-indigo-500 text-6xl"></i>
           </div>
           <h1 className="text-4xl text-gray-700 mb-2 font-serif">
-            Gestión de Inventario
+            Inventory Management
           </h1>
           <p className="text-gray-500 text-lg">
-            Administración exclusiva y elegante
+            Exclusive and elegant administration
           </p>
         </div>
 
-        {/* Grid de opciones */}
+        {/* Options grid */}
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {menuItems.map((item, index) => (
