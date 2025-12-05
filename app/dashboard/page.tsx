@@ -74,7 +74,7 @@ export default function DashboardPage() {
               <a
                 key={index}
                 href={item.href}
-                className="block group bg-white rounded-xl shadow-lg p-8 text-center cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full border border-gray-100"
+                className="block group bg-white rounded-xl shadow-lg p-8 text-center cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full border border-gray-100 flex flex-col"
               >
                 <div className="mb-6">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full text-white text-3xl">
@@ -86,11 +86,11 @@ export default function DashboardPage() {
                   {item.title}
                 </h3>
                 
-                <p className="text-gray-500 text-sm mb-6">
+                <p className="text-gray-500 text-sm mb-8 flex-grow">
                   {item.description}
                 </p>
                 
-                <div className="bg-gray-800 text-white rounded-full px-6 py-2 text-sm font-medium transition-colors group-hover:bg-indigo-600 inline-block">
+                <div className="bg-gray-800 text-white rounded-full text-sm font-medium transition-colors group-hover:bg-indigo-600 py-3 w-full text-center">
                   {item.buttonText}
                 </div>
               </a>
